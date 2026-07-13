@@ -1,0 +1,210 @@
+<html>
+    <head>
+        <title>Interior design</title></head>
+    <style>
+        .navbar {
+                background-color: #171718;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 40px;
+                position:fixed;
+                width: 100%;
+                top:0;
+                z-index: 1000;
+                padding: 10px;
+                font-size: 25px;
+            }
+
+            .logo{
+                display: flex;
+                align-items: center;
+                gap:10px;
+                color:white;
+
+            }
+
+            .logo img {
+                width: 120px;
+                height:120px;
+            }
+           
+            .logo h2 {
+                font-size: 20px;
+                margin:0;
+            }
+
+            ul {
+                display: flex;
+                gap: 25px;
+                list-style: none;
+            }
+
+            ul li a{
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 20px;
+            }
+
+            ul li a:hover{
+                color:#ffcc00;
+            }
+            .hero{
+                
+                top: 0;
+                padding: 40px;
+                margin-top: 0;
+                margin: 0;
+                font-size: 25px;
+
+            }
+            .contact-wrapper{
+                max-width: 1000px;
+                margin: 40px auto;
+                display: flex;
+                gap: 30px;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                display: flex;
+                
+                
+                
+            }
+            .contact-form{
+                flex: 1;
+                min-width: 300px;
+                padding: 30px 40px;
+                font-family: Arial, Helvetica, sans-serif;
+                border: 1px red;
+                border-radius: 8px;
+                box-sizing: border-box;
+                
+                
+
+            }
+            .contact-form h2{
+                text-align: center;
+                margin-bottom: 30px;
+
+
+            }
+            .contact-form label{
+                display: block;
+                font-weight: bold;
+                margin-top: 18px;
+                margin-bottom: 5px;
+                font-size: 20px;
+            }
+            .contact-form input,
+            .contact-form textarea{
+                width: 100%;
+                padding: 12px;
+                border: 1px red;
+                border-radius: 4px;
+                font-size: 15px;
+                box-sizing: border-box;
+            }
+            .contact-form button{
+                width: 100%;
+                margin-top: 25px;
+                padding: 14px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            .details{
+                flex: 1;
+                min-width: 320px;
+                padding: 30px 40px;
+                font-family: Arial, Helvetica, sans-serif;
+                border: 1px blue;
+                border-radius: 10px;
+                box-sizing: border-box;
+                font-size: 18px;
+                text-align: center;
+                box-shadow: blue;
+                
+            }
+            .details h2{
+                margin-bottom: 30px;
+                text-align: center;
+                font-size: 18px;
+            }
+            .details p{
+                margin: 12px 0;
+                font-size: 18px;
+            }
+           
+        </style>
+      
+    <body>
+        <div class="navbar">
+            <div class="logo">
+                <img src="https://template.canva.com/EAFHZz9oyKk/1/0/1600w-buAGdxzZjDo.jpg" rel="stylesheet" height="100px" width="50px">
+                <div>
+                <h2>Simple Studio</h2>
+                <br>
+                   <small>Interior Design Studio</small>
+            </div>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects showcase</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="login.html">login</a></li>
+                <li><a href="signup.html">Signup</a></li>
+            </ul>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            
+        
+            <div class="hero">
+        <center><h1>Contact Us</h1>
+       <p>We are here to Help Your Business with Interior Design Studios</p></center>
+        </div>
+        <div class="contact-wrapper">
+       <div class="contact-form">
+        <h2>Send  Us a message</h2>
+        <form>
+            <label>Name *</label>
+            <input type="text" id="name" name="name" required>
+            <label>Phoen *</label>
+            <input type="tel" id="phoen" name="phoen" placeholder="Enter 10-digit phoen number" pattern="[0-9]{10}" required>
+            <label>Email *</label>
+            <input type="email" id="email" name="email" required>
+            <label>Message *</label>
+            <textarea id="message" name="message" rows="5"></textarea>
+            <button type="submit">Send message</button>
+        </form>
+       </div>
+     
+       <div class="details">
+        <h2>Our Details</h2>
+        <p><strong>Address:</strong> Hyderabad,India</p>
+        <br>
+        <p><strong>Phoen:</strong>+91 9876543210</p>
+        <br>
+        
+        <p><strong>Email:</strong> info@simplestudio.com</p>
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7610.572761126694!2d78.40022379601746!3d17.493837566445503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb91625d9cd1ad%3A0x4455387ad24a675d!2s10000Coders!5e0!3m2!1sen!2sin!4v1783925266736!5m2!1sen!2sin" width="400" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            
+
+       </div>
+       
+    </div>
+    <div style="background: #1b1b1b; padding: 20px; text-align: center;">
+    <p style="color: white; font-style: italic;margin: 0;">@ 2026 Interior Design Studios. All rights Resered</p>
+</div>
+
+    
+    </body>
+</html>
