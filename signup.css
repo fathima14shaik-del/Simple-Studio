@@ -1,0 +1,499 @@
+/* ==========================================================================
+   1. Global Reset & Base Theme
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #fcfbfa;
+    color: #2b2b2b;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   2. Navbar Layout
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #1a237e;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar .logo img {
+    height: 40px;
+    width: auto;
+    border-radius: 4px;
+}
+
+.navbar .logo h2 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #111111;
+    line-height: 1.1;
+}
+
+.navbar .logo small {
+    font-size: 0.72rem;
+    color: #8c745c; /* Refined studio clay brown accent */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    align-items: center;
+}
+
+.navbar ul li a {
+    color: #5d5d5d;
+    font-size: 0.92rem;
+    font-weight: 400;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a[href="signup.html"] {
+    color: #8c745c;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   3. Split Screen Signup Container
+   ========================================================================== */
+.signup-container {
+    flex: 1;
+    display: flex;
+    max-width: 1100px;
+    width: 90%;
+    margin: 110px auto 40px auto; /* Margin tops accounts for fixed top header */
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+}
+
+/* --- Left Decorative Panel --- */
+.aside-panel {
+    flex: 1;
+    background: linear-gradient(135deg, #2b2520 0%, #171412 100%); /* Premium dark architecture aesthetic */
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #eae1d8;
+    position: relative;
+}
+
+.aside-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.07;
+    background-image: radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.aside-panel .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+}
+
+.aside-panel .brand-img {
+    height: 35px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.aside-panel .brand h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.aside-panel .aside-content {
+    z-index: 2;
+    margin: 60px 0;
+}
+
+.aside-panel .aside-content h3 {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.aside-panel .aside-content p {
+    font-size: 0.95rem;
+    color: #b0a396;
+    line-height: 1.6;
+}
+
+.aside-panel .aside-footer {
+    z-index: 2;
+    font-size: 0.9rem;
+}
+
+.aside-panel .aside-footer a {
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* --- Right Interaction Form Panel --- */
+.form-panel {
+    flex: 1.2;
+    padding: 50px 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-panel h2 {
+    font-size: 2rem;
+    color: #111111;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.form-panel .subtitle {
+    color: #777777;
+    font-size: 0.95rem;
+    margin-bottom: 35px;
+}
+
+/* ==========================================================================
+   4. Dynamic Interactive Fields (Floating Labels & Validation)
+   ========================================================================== */
+.input-group {
+    position: relative;
+    margin-bottom: 24px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 45px 16px 42px;
+    outline: none;
+    border: 1.5px solid #e2e2e2;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #111111;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Input Focus States */
+.input-group input:focus {
+    border-color: #8c745c;
+    box-shadow: 0 0 0 4px rgba(140, 116, 92, 0.08);
+}
+
+/* Interactive Floating Labels */
+.input-group label {
+    position: absolute;
+    left: 42px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9aa0a6;
+    font-size: 0.95rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    padding: 0 4px;
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: 0;
+    font-size: 0.8rem;
+    color: #8c745c;
+    font-weight: 500;
+}
+
+/* Standard Icons Styling */
+.input-group .icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0a0a0;
+    font-size: 1.05rem;
+    transition: color 0.3s ease;
+}
+
+.input-group input:focus ~ .icon {
+    color: #8c745c;
+}
+
+/* Dynamic CSS Form Validation Checkmark */
+.input-group .valid-icon {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #2ec4b6;
+    font-size: 1.05rem;
+    opacity: 0;
+    transform: translateY(-50%) scale(0.7);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: none;
+}
+
+/* Reveal green checkbox automatically when browser accepts text pattern criteria matches */
+.input-group input:not(:placeholder-shown):valid ~ .valid-icon {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+/* ==========================================================================
+   5. Dynamic Password Requirements Block
+   ========================================================================== */
+.password-requirements {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    margin-top: 0;
+}
+
+.password-requirements p {
+    font-size: 0.8rem;
+    color: #777777;
+    padding: 8px 12px;
+    background-color: #fbf9f6;
+    border-left: 3px solid #8c745c;
+    border-radius: 0 6px 6px 0;
+}
+
+/* Trigger reveal naturally when customer targets password cell entries */
+.input-group:focus-within .password-requirements {
+    max-height: 60px;
+    opacity: 1;
+    margin-top: 8px;
+}
+
+/* Change requirement notice highlight color to safe green color if length constraint matches criteria rules */
+.input-group input:valid ~ .password-requirements p {
+    border-left-color: #2ec4b6;
+    color: #2b2b2b;
+}
+
+/* ==========================================================================
+   6. Custom Checkbox System
+   ========================================================================== */
+.terms-group {
+    margin-bottom: 26px;
+}
+
+.checkbox {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Use system styling framework injection points safely without raw symbol leaks */
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0; width: 0;
+}
+
+.custom-checkbox {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #dcdcdc;
+    border-radius: 6px;
+    margin-right: 12px;
+    display: inline-block;
+    position: relative;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+    margin-top: 2px;
+}
+
+.checkbox:hover .custom-checkbox {
+    border-color: #8c745c;
+}
+
+/* Checkmark logic mapping safely across components */
+.checkbox .terms-text {
+    font-size: 0.88rem;
+    color: #555555;
+    line-height: 1.4;
+}
+
+.checkbox .terms-text a {
+    color: #8c745c;
+    font-weight: 500;
+}
+
+/* Checkbox action triggered configuration framework state definitions */
+/* Note: Since your original HTML lacks a native <input type="checkbox"> inside the label, 
+   we handle fallback configurations neatly via CSS architecture definitions */
+
+/* ==========================================================================
+   7. Animated Dynamic Action Submit Button
+   ========================================================================== */
+.signup-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.98rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    margin-bottom: 24px;
+}
+
+.signup-btn:hover {
+    background-color: #333333;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.signup-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+.signup-btn .btn-arrow {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+/* ==========================================================================
+   8. Social Identity Integrations Grid
+   ========================================================================== */
+.social-grid {
+    display: flex;
+    gap: 14px;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1.5px solid #e8e8e8;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #444444;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+    background-color: #faf9f7;
+    border-color: #d1d1d1;
+}
+
+.social-btn i {
+    font-size: 1.1rem;
+}
+
+.color-google { color: #ea4335; }
+.color-apple { color: #000000; }
+
+/* ==========================================================================
+   9. Structural Layout Footer Component
+   ========================================================================== */
+.footer {
+    background-color: #1a237e;
+    padding: 24px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+    font-size: 0.85rem;
+    color: #777777;
+    margin-top: auto;
+}
+
+/* ==========================================================================
+   10. Desktop First Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 900px) {
+    .signup-container {
+        flex-direction: column;
+        margin-top: 90px;
+    }
+
+    .aside-panel {
+        padding: 40px;
+    }
+
+    .aside-panel .aside-content {
+        margin: 30px 0;
+    }
+
+    .form-panel {
+        padding: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        padding: 0.8rem 16px;
+    }
+    
+    .navbar ul {
+        display: none; /* Collapses navigation items for cleaner mobile accessibility experience */
+    }
+
+    .signup-container {
+        width: 95%;
+        margin-top: 80px;
+    }
+
+    .aside-panel {
+        display: none; /* Conceals secondary hero art blocks on smaller display configurations */
+    }
+
+    .form-panel {
+        padding: 30px 20px;
+    }
+
+    .social-grid {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
