@@ -1,0 +1,394 @@
+/* ==========================================================================
+   1. Global Reset & Base Styles
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   2. Navbar Styling
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #1a237e;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navbar .logo img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navbar .logo h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.1;
+}
+
+.navbar .logo small {
+    font-size: 0.75rem;
+    color: #8c7863; /* Warm interior-design accent tone */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 24px;
+    align-items: center;
+}
+
+.navbar ul li a {
+    color: #555555;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.navbar ul li a:hover {
+    color: #8c7863;
+}
+
+/* Highlight active/login link style */
+.navbar ul li a[href="login.html"] {
+    color: #8c7863;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. Login Container & Card Layout
+   ========================================================================== */
+.login-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 20px 80px 20px; /* Top padding accommodates fixed navbar */
+    background: linear-gradient(135deg, #f3f1ee 0%, #e6e2dc 100%);
+}
+
+.login-box {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.login-box h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.login-box p {
+    color: #777777;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   4. Interactive Floating Label Input Groups
+   ========================================================================== */
+.input-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 45px 14px 40px; /* Space for left and right icons */
+    outline: none;
+    border: 1.5px solid #dddddd;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #333333;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Input Interactive States */
+.input-group input:focus {
+    border-color: #8c7863;
+    box-shadow: 0 0 0 4px rgba(140, 120, 99, 0.1);
+}
+
+/* Floating Label Logic using placeholder-shown trick */
+.input-group label {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    font-size: 0.95rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+    padding: 0 4px;
+}
+
+/* When input is focused or has content, shrink and float label up */
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: 0;
+    font-size: 0.8rem;
+    color: #8c7863;
+    font-weight: 500;
+}
+
+/* Input Icons Layout */
+.input-group .input-icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999999;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.input-group input:focus ~ .input-icon {
+    color: #8c7863;
+}
+
+/* Password eye toggle positioning */
+.input-group .toggle-password {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999999;
+    cursor: pointer;
+}
+
+.input-group .toggle-password:hover {
+    color: #333333;
+}
+
+/* ==========================================================================
+   5. Form Actions (Remember Me & Forgot Link)
+   ========================================================================== */
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.88rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #555555;
+    user-select: none;
+}
+
+.remember-me input {
+    display: none; /* Hide native checkbox to use custom layout */
+}
+
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #cccccc;
+    border-radius: 4px;
+    margin-right: 8px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.remember-me input:checked + .custom-checkbox {
+    background-color: #8c7863;
+    border-color: #8c7863;
+}
+
+/* Custom checkbox checkmark indicator */
+.remember-me input:checked + .custom-checkbox::after {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #ffffff;
+    font-size: 0.7rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.forgot-link {
+    color: #8c7863;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   6. Buttons & Separation Dividers
+   ========================================================================== */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.login-btn:hover {
+    background-color: #333333;
+}
+
+.login-btn:active {
+    transform: scale(0.99);
+}
+
+/* Or continue with divider line */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 25px 0;
+    color: #aaa;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.divider span {
+    padding: 0 10px;
+}
+
+/* Social Login Integration */
+.social-login {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: #f8f9fa;
+    border-color: #cccccc;
+}
+
+.social-btn i {
+    font-size: 1.05rem;
+}
+
+.signup-text {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666666;
+}
+
+.signup-text a {
+    color: #8c7863;
+    font-weight: 600;
+}
+
+.signup-text a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   7. Footer Styles
+   ========================================================================== */
+.footer {
+    background-color: #1a237e;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid #eeeeee;
+    font-size: 0.85rem;
+    color: #777777;
+}
+
+/* ==========================================================================
+   8. Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem 20px;
+        flex-direction: column;
+        gap: 12px;
+        position: relative; /* Prevent fixed overlap layout on small devices */
+    }
+
+    .navbar ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .login-container {
+        padding-top: 40px;
+    }
+
+    .login-box {
+        padding: 30px 20px;
+    }
+}
