@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            testimonial
+        </title>
+
+        <style>
+
+            *{
+                padding:0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+
+            body {
+                margin:0px;
+                background-color: #f8f5f2;
+                width:100%;
+                padding-top: 70px;
+                
+                
+            }
+             
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                background-color: #1a237e;
+                margin-top: -70px;
+                padding: 15px 40px;
+                position: fixed;
+                box-sizing: border-box;
+                width:100%;
+            }
+
+            .logo {
+                display: flex;
+                align-items: center;
+                gap:12px;
+            }
+
+            .logo img {
+                width:70px;
+                height:70px;
+            }
+
+              .brand-name h2{
+                margin: 0;
+                font-size: 28px;
+                color:white;
+              }
+
+              .brand-name p {
+                margin: 0;
+                font-size: 14px;
+                color:white;
+                font-weight: 300px;
+
+              }
+
+              
+            .menu a {
+                color:white;
+                text-decoration: none;
+                margin-left: 20px;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            .menu a:hover {
+                color: #ffb400;
+                border-bottom: 2px solid #ffb400;
+            }
+
+            .page-header {
+                text-align: center;
+                padding-top: 130px;
+                background: url('https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg');
+                background-size: cover;
+                color:black;
+                height: 450px;
+                
+                
+            }
+
+            .page-header h1 {
+                font-size: 42px;
+                margin:0;
+                padding-bottom: 20px;
+            
+                
+            }
+
+            .page-header p {
+                font-size: 18px;
+                margin-top: 2px;
+                
+            }
+
+            .section-title {
+                text-align: center;
+                font-size: 32px;
+                color: #1a237e;
+                margin: 60px 0 30px;
+            }
+
+            .testimonial-container {
+                        max-width: 1200px;
+                        margin: 0 auto 60px;
+                        padding: 0 20px;
+                        display:grid;
+                        grid-template-columns: repeat(autofit, minmax(320, 1fr));
+                        gap: 30px;
+            }
+
+            .testimonial-card {
+                background-color: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+                text-align: center;
+
+            }
+
+            .testimonial-card:hover {
+                transform: translateY(-8px);
+            }
+
+            .client-img {
+                width:90px;
+                height:90px;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 4px solid #1a237e;
+                margin-bottom: 15px;
+            }
+
+            .stars {
+                color:#ffb400;
+                font-size: 20px;
+                margin: 10px 0;
+            }
+
+            .review {
+                font-size: 16px;
+                color:#444;
+                line-height: 1.7;
+                font-style: italic;
+                margin: 20px 0;
+            }
+
+            .client-name {
+                font-size: 18px;
+                font-weight: 600;
+                color:#1a237e;
+                margin:0;
+            }
+
+            .video-testimonial-container {
+                width: 100%;
+                height: 600px;
+                margin: 0 auto 60px;
+                padding: 10px 20px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
+                gap: 30px;
+            }
+
+            .video-card {
+                background-color: white;
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: 0 6px 20px rgba(26,35,126,0.1);
+                transition: 0.3s;
+            }
+
+            .video-card:hover{
+                transform: translateY(-8px);
+                
+            }
+
+            .video-card a {
+                text-decoration: none;
+                color:#333;
+                display: block;
+            }
+
+    
+            .video-wrapper {
+                
+                height: 300px;
+                overflow: hidden;
+                width: 100%;
+                background-color: #000;
+            }
+
+            .video-wrapper .thumbnail{
+                width:100%;
+                height:200px;
+                object-fit: cover;
+                display:block;
+            }
+
+           
+
+            .video-info{
+                padding:20px;
+                text-align: center;
+                background-color: #1a237e;
+                color: white;
+
+            }
+
+            .video-info h4 {
+                margin:0;
+                color:#ffb400;
+                font-size: 18px;
+                display: flex;
+
+            }
+
+            .video-info p {
+                margin: 5px ;
+                color: #777;
+                font-size: 14px;
+                color:#ffb400;
+            }
+
+            .cta-section {
+                text-align: center;
+                padding: 60px 20px;
+                background-color: #1a237e;
+                color:white;
+                margin-top: 60px;
+
+            }
+
+            .cta-btn {
+                background-color: white;
+                color:#1a237e;
+                padding: 15px 40px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 18px;
+                display: inline-block;
+                margin-top: 20px;
+
+            }
+
+            .cta-btn:hover {
+                background-color: #e8eaf6;
+            }
+
+            footer{
+                text-align: center;
+                background-color: #111;
+                color:white;
+                padding:20px;
+            }
+
+
+
+        </style>
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="logo">
+                <img src="https://template.canva.com/EAFHZz9oyKk/1/0/1600w-buAGdxzZjDo.jpg">
+                <div class="brand-name">
+                   <h2>SIMPLE STUDIO</h2>  
+                <p>Interior Design studio</p>
+                </div>
+            </div>
+                <div class="menu">
+                    <a href="index.html">HOME</a>
+                     <a href="aboutus.html">ABOUT US</a>
+                      <a href="skills.html">SKILLS</a>
+                       <a href="projects.html">PROJECTS</a>
+                        <a href="testimonials.html">TESTIMONIALS</a>
+                         <a href="contactus.html">CONTACT</a>
+                          <a href="login.html">LOGIN</a>
+                           <a href="signup.html">SIGNUP</a>
+                </div>
+        </header>
+                </div>
+            </div>
+
+            <div class="page-header">
+               
+               
+                <h1>What Our Clients Say</h1>
+                <p>Trusted by 200+ Happy Homeowners</p>
+            </div>
+            
+            <div class="testimonial-container">
+            <div class="testimonial-card">
+                <img class="client-img" src="https://img.magnific.com/free-photo/lifestyle-people-emotions-casual-concept-confident-nice-smiling-asian-woman-cross-arms-chest-confident-ready-help-listening-coworkers-taking-part-conversation_1258-59335.jpg" rel="stylesheet">
+                 <div class="stars"> 4.5 &#9733;</div>
+                    <p class="review">simple interiors made my 2bhk just like a luxury villa. they took care of every corner. They completed everything within 15 days in budget</p>
+                    <h4 class="client-name">Riya Sharma</h4>
+                    
+            </div>
+
+            <div class="testimonial-card">
+                <img class="client-img" src="https://plus.unsplash.com/premium_photo-1690407617542-2f210cf20d7e?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlfGVufDB8fDB8fHww" rel="stylesheet">
+                <div class="stars"> 4 &#9733; </div>
+                <p class="review>">Best team for office interiors. we wanted mordern and professional look and they deliver the same.</p>
+                <h4 class="client-name"> Priya Das</h4>
+                
+            </div>
+
+            <div class="testimonial-card">
+                <img class="client-img" src="https://media.istockphoto.com/id/2172317014/photo/happy-hispanic-man-working-on-laptop-at-home.webp?b=1&s=612x612&w=0&k=20&c=ukqKyfuXrrr3JQ9JQ_XFPVldwCAyNOAqgthkRiRcbzs=" rel="stylesheet">
+                <div class="stars"> 4 &#9733;</div>
+                <p class="review">Kitchen and bedroom design is amazing. perfect utilization of space. Simple interiors are very cooperative</p>
+                <h4 class="client-name">Aman Verma</h4>
+
+            </div>
+
+            <div class="testimonial-card">
+                <img class="client-img" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmVzc2lvbmFsJTIwcGVvcGxlfGVufDB8fDB8fHww" rel="stylesheet">
+                <div class="stars">5 &#9733;</div>
+                <p class="review">the 3d design is the game changer. whatever i thought got the more better. Material quality is also really good</p>
+                <h4 class="client-name">Sneha Patil</h4>
+            </div>
+            </div>
+            <hr>
+                <h2 class="section-title">Video Testimonials</h2>
+                <div class="video-testimonial-container">
+
+                    <div class="video-card">
+                        <div class="video-wrapper">
+                            <a href="https://youtu.be/28GcRDAbeko">
+                                <img class="thumbnail" src="https://i.ytimg.com/vi/28GcRDAbeko/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDza_BTKPXlDcLTiWiELXFNjUhnGQ">
+                                <div class="video-info">
+                                    <h4>Aishwarya</h4>
+                                    <p>Full Home Interior</p>
+                                </div>
+                            
+                        </div>
+                    </div>
+                 
+
+                 <div class="video-card">
+                    <div class="video-wrapper">
+                        <a href="https://youtu.be/FX2Fx-NJlPE">
+                            <img class="thumbnail" src="https://i.ytimg.com/vi/FX2Fx-NJlPE/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCHDUedpzO6s-PRft9hBkybLAfvew">
+                            <div class="video-info">
+                                <h4>Ben & Sophi</h4>
+                                <p>Full home Interior</p>
+                            </div>
+                        
+                    </div>
+                 </div>
+
+                 <div class="video-card">
+                    <div class="video-wrapper">
+                        <a href="https://youtu.be/Q-lv4gNvyac">
+                            <img class="thumbnail" src="https://i.ytimg.com/vi/Q-lv4gNvyac/hqdefault.jpg?sqp=-oaymwFBCPYBEIoBSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AHOBYACgAqKAgwIABABGH8gEygXMA8=&rs=AOn4CLCUSjqcT1RRTI-y6a7K2-ADDeRVhg">
+                            <div class="video-info">
+                                <h4>Dr. Sandeep Gupte</h4>
+                                <p>Full home interior</p>
+                            </div>
+                        
+                    </div>
+                 </div>
+
+                 <div class="video-card">
+                    <div class="video-wrapper">
+                        <a href="https://youtu.be/bZEvZKtJlwQ">
+                            <img class="thumbnail" src="https://i.ytimg.com/vi/bZEvZKtJlwQ/hqdefault.jpg?sqp=-oaymwEnCPYBEIoBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLCh5R3-txm68_1dEFTpWFTPS5EFBg">
+                            <div class="video-info">
+                                <h4>Sarah</h4>
+                                <p>home interior</p>
+                            </div>
+                       
+                        
+                    </div>
+                 </div>
+
+                 <div class="video-card">
+                    <div class="video-wrapper">
+                        <a href="https://youtu.be/hM4V1WIgKN4">
+                        <img class="thumbnail" src="https://i.ytimg.com/vi/hM4V1WIgKN4/hqdefault.jpg?sqp=-oaymwFBCPYBEIoBSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AH-CYAC0AWKAgwIABABGGUgWyhJMA8=&rs=AOn4CLCH5qtf9nVoT2C-d2KKCaavmOHC3w">
+                        <div class="video-info">
+                            <h4>Asha</h4>
+                            <p>Home Interior</p>
+                            
+                        </div>
+                        </a>
+                    </div>
+                    
+                 </div>
+                
+                 </div>
+                
+
+                 <div class="cta-section">
+                    <h2> Ready to Transform Your Space?</h2>
+                    <p>Let's create interiors that tell your story</p>
+                    <a href="contact.html" class="cta-btn">Book free Consultation</a>
+                 </div>
+
+                 <footer>
+                    &copy; 2026 Simple Interiors. All Rights Reserved.
+                 </footer>
+    </body>
+</html>
