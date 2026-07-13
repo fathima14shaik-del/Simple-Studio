@@ -1,0 +1,386 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta  name="viewport" description="width=device-width initial-scale=1.0">
+        <title>Interior Design</title>
+
+     <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial';
+        }
+
+        body{
+            background: rgb(253, 255, 254);
+            color: #333;
+        }
+
+        header{
+            background-color: #130879;
+            padding: 13px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            top: 0;
+        }
+
+        .logo{
+            font-size: 24px;
+            font-weight: 700;
+            color: #fcf9f7;
+            align-items: center;
+            display: flex;
+            gap: 10px;
+        }
+
+            span {
+                margin-top: -20px;
+            }
+        .logo small{
+            font-size: 14px;
+            font-weight: 500;
+            color: #fcfbf9;
+            margin-top: 30px;
+            margin-left: -162px;
+        }
+
+        .logo img{
+            height: 70px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        nav a{
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            transition:0.4s;
+        }
+
+        nav a:hover{
+            color: #5fbdfc;
+            border-bottom: 5px solid rgb(247, 246, 244);
+            border-right: none;
+            border-left:none;
+            border-bottom-left-radius:7px ;
+            border-bottom-right-radius:7px ;
+            animation: 0.4 ease-in-out;
+        }
+
+        .skills-head{
+            text-align: center;
+            padding: 60px 20px 40px;
+            background:linear-gradient(rgb(184, 176, 63),rgba(33,40,5.5));
+            color: white;
+        }
+
+        .skills-head h1{
+            font-size: 42px;
+            color: #e0d534;
+            margin-bottom: 10px;
+        }
+
+        .section-title{
+            text-align: center;
+            font-size: 30px;
+            margin-left: -170px;
+            color: rgb(10, 6, 1);
+            border: 2px solid black;
+           border-radius: 30px;
+           padding: 10px 25px;
+           display: inline-block;
+        }
+
+        .skills-container{
+            display: grid;
+            grid-template-columns: repeat(2,1ftr);
+            gap: 25px;
+            padding: 60px;
+            max-width: 1200px;
+            margin-left: 180px;
+            
+        }
+
+        .skills-card{
+            background: #06067e;
+            padding-left: 30px;
+            background-size: cover;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.9);
+            transition: 0.3s ease;
+            border-left: 15px solid rgb(184, 176, 63);   
+            flex-direction: column;
+            width: 80%;
+            min-height: 250px;
+            box-sizing: border-box;
+        }
+
+        .skills-card:hover{
+            transform: translateY(-8px);
+        }
+
+        .skills-card .icon{
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .skills-card h3{
+            font-size: 22px;
+            color: #e0d534;
+            margin-bottom: 10px;
+        }
+
+        .skills-card p{
+            font-size: 15px;
+            color: white;
+            line-height: 1.6;
+        }
+
+        .skill-tag{
+            color: #e0d534;
+        }
+
+        .more-info{
+            display: none;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px dashed #0190f0;
+            font-size: 14px;
+            color: #fcf9f9;
+        }
+
+            .more-info.show{
+                display: block;
+            }
+
+            .read-btn{
+                margin-top: 16px;
+                padding: 8px; 
+                background: #d4a373;
+                color: white;
+                border: none;
+                border-radius: 15px;
+                cursor: pointer;
+                font-weight: 600;
+            }
+
+            .read-btn:hover{
+                background: #8b5e3c;
+                border-bottom: 2px solid #fcf9f9;
+            }
+
+         footer{
+            background: #06067e;
+            color: aliceblue;
+            text-align: center;
+            padding: 40px;
+            height: 100px;
+         }   
+
+    </style>
+
+    </head>
+    <body>
+        <!--Navigation-->
+        <header>
+            <div class="logo">
+                <img src="https://template.canva.com/EAFHZz9oyKk/1/0/1600w-buAGdxzZjDo.jpg">
+                <span>Simple Studio</span>
+                <small>Interior Design Studio</small>
+            </div>
+            <nav>
+                <a href="index.html">HOME</a>
+                <a href="aboutus.html">ABOUTUS</a>
+                <a href="skills.html">SKILLS</a>
+                <a href="projects.html">PROJECTS</a>
+                <a href="testimonials.html">TESTIMONIALS</a>
+                <a href="contactus.html">CONTACT</a>
+                <a href="login.html">LOGIN</a>
+                <a href="signup.html">SIGNUP</a>
+            </nav>
+        </header>
+
+        <!--Banner part-->
+
+        <div class="skills-head">
+            <h1>Our Expertise & Skills</h1>
+            <p>Creativity meets functionality. We blend technical precision with artistic vision to create stunning interiors.</p>
+            </div>
+
+            <!--Technical skills area-->
+            
+            <div class="skills-container">
+                <h2 class="section-title">Technical Skills</h2>
+                   
+                <div class="skills-card">
+                    <div class="icon">
+                        <img src="">
+                    </div>
+                    <h3>3D MODELING & RENDERING</h3>
+                    <p>Expert in AutoCAD, Sketchup, 3ds Max and Lumion for ceating realistic 3D visulization<br>
+                    of spaces before execution. Translating conceptual designs into highly accurate <br>
+                    three-dimensional digital model and photorealistic renderings. </p>
+                    <span class="skill-tag">AutoCAD | Sketchup | Lumion</span>
+                    <br>
+                    <div class="more-info">
+                    This process visualizes spatial volumes, precise architectural details, and complex<br>
+                    material textures, enabling clients to fully experience and refine a space before physical<br>
+                    construction begins.
+                    </div>
+                    <button class="read-btn" onclick="toggleRead(this)">Read More</button>
+                </div>
+
+
+                <div class="skills-card">
+                    <div class="icon">
+                        <img src="">
+                    </div>
+                    <h3>SPACE PLANNING & LAYOUT</h3>
+                    <p>Optimizing floor plans for flow, function and aesthetics. Expertise in residential, <br>
+                    commercial and retail spaces. Developing strategic spatial configurations that maximize<br>
+                    both functionality and flow.</p>
+                    <span class="skill-tag">Floor Planning | Ergonomics</span>
+                    <br>
+                    <div class="more-info">
+                    This involves analyzing the floor plans to optimize circulation paths, ensure code compliance<br>
+                     and implement ergonomic furniture placements that balance human behaviour with aesthetic efficiency.
+                    </div>
+                    <button class="read-btn" onclick="toggleRead(this)">Read More</button>
+                </div>
+
+
+                 <div class="skills-card">
+                    <div class="icon">
+                        <img src="">
+                    </div>
+                    <h3>MATERIAL & COLOR CONSULTATION</h3>
+                    <p>Deep knowledge of fabrics, finishes, lighting, and color psychology to create mood and <br>
+                    harmony in interiors. Curating cohesive palettes, finishes, and architectural surfaces <br>
+                    tailored to the specific mood and longevity of an environment.</p>
+                    <span class="skill-tag">Color Theory | Materials</span>
+                    <br>
+                    <div class="more-info">
+                    This practice balances visual harmony with practical performance metrics like durability<br>
+                    Maintainance, and acoustics.
+                    </div>
+                    <button class="read-btn" onclick="toggleRead(this)">Read More</button>
+                </div>
+
+
+                 <div class="skills-card">
+                    <div class="icon">
+                        <img src="">
+                    </div>
+                    <h3>LIGHTING DESIGN</h3>
+                    <p>Creating ambient, task and accent lighting and plans that enhance architecture and set<br>
+                    the rigt atmosphere. Engineering strategic illumination schemes that enhance both architectural<br>
+                    features and daily utility.</p>
+                    <span class="skill-tag">Lighting | Vastu</span>
+                    <br>
+                    <div class="more-info">
+                    By layering ambient, task, and accent lighting, this discipline manipulatives light color<br>
+                    temperature, fixture placements, and intensity to fundamentally shape the mood, functionality<br>
+                    and perceived scale of a space. 
+                    </div>
+                    <button class="read-btn" onclick="toggleRead(this)">Read More</button>
+                </div>
+                
+
+                <!--Professional skills part-->
+
+                <h2 class="section-title">Professional Skills</h2>
+               
+
+                    <div class="skills-card">
+                        <div class="icon">
+                            <img src="">
+                        </div>
+                        <h3>CLIENT COMMUNICATION</h3>
+                        <p>Understanding client vision and translating it into design. Strong presentation and <br>
+                        consultation skills. Establishing transparent, articulate dialogue to bridge the gap between<br>
+                        creative vision and stakeholder expectations. </p>
+                        <span class="skill-tag">Consultation | Presentation</span>
+                        <br>
+                        <div class="more-info">
+                        This involves active listening to extract core project requirements, translating complex <br>
+                        jargon into accessible concepts, and maintaining structured progress updates to build long-term<br>
+                        alignment and trust.
+                        </div>
+                        <button class="read-btn" onclick="toggleRead(this)">Read More</button>
+                    </div>
+
+                     <div class="skills-card">
+                        <div class="icon">
+                            <img src="">
+                        </div>
+                        <h3>PROJECT MANAGEMENT</h3>
+                        <p>Managing timelines, budgets, vendors and execution. From BOQ to final handover, we coordinate<br>
+                        with carpenters, electricians and vendors. Weekly updates and on-site supervision included.</p>
+                        <span class="skill-tag">Budgeting | Execution</span>
+                        <br>
+                        <div class="more-info">
+                        Overseeing design initiatives from initial concept through final execution. This discipline focuses<br>
+                        on cros-functional team coordination, rigorous schedule management, and trategic resource allocation<br>
+                        to ensure deliverables meet strict quality standards, deadlines, and budgetary constraints.
+                        </div>
+                        <button class="read-btn" onclick="toggleRead(this)">Read More</button>
+                    </div>
+
+                     <div class="skills-card">
+                        <div class="icon">
+                            <img src="">
+                        </div>
+                        <h3>CREATIVE PROBLEM SOLVING</h3>
+                        <p>Finding innovative solutions for small spaces, budget constraints and structural challenges<br>
+                        with creative designs. Navigating unexpected spatial, technical, or structural roadblocks with <br>
+                        innovative, elegant workarounds.</p>
+                        <span class="skill-tag">Innovation | Creativity</span>
+                        <br>
+                        <div class="more-info">
+                        This mindset relias on lateral thinking and agile adaptation to resolve design conflicts-such as<br>
+                         material shortages or restrictive field conditions-without sacrificing aesthetics integrity or <br>
+                         functional utility.
+                        </div>
+                        <button class="read-btn" onclick="toggleRead(this)">Read More</button>
+                    </div>
+
+                     <div class="skills-card">
+                        <div class="icon">
+                            <img src="">
+                        </div>
+                        <h3>TREND RESEARCH & STYLING</h3>
+                        <p> Staying updated with global interior trends, furniture styling and decor to give modern <br>
+                        and timeless looks. Continuously analyzing global market shifts, consumer behaviour, material<br>
+                        innovations and color forecasting. </p>
+                        <span class="skill-tag">Trebd Analysis | Styling</span>
+                        <br>
+                        <div class="more-info">
+                        By translating these macro trends into tangible, localized aesthetics, this practice ensures<br>
+                        that final environments look curent, feel culturally relevant, and maintain long-term visual appeal.
+                        </div>
+                        <button class="read-btn" onclick="toggleRead(this)">Read More</button>
+                    </div>
+
+                    
+                
+                </div>
+
+                <footer id="contact">
+                    <p>&copy; 2026 Simple Studio | All Rights Reserved</p>
+                    
+                </footer>
+
+                <script>
+                    function toggleRead(btn){
+                        let moreinfo=btn.previousElementSibling;
+                        moreinfo.classList.toggle("show");
+                        btn.innerText=moreinfo.classList.contains("show")?"Read Less": "Read More";
+                    }
+                </script>
+    </body>
+</html>
